@@ -1,0 +1,36 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "1. Initial setup 2. CSS and Scss BEM 3. Basic Routing 4. Static files, handle svgs 5. Dynamic Routing 6. CMS Json for content rendering 7. API for external users",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.0",
+    "dotenv": "^8.1.0",
+    "next": "^9.0.5",
+    "next-redux-wrapper": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "sass-resources-loader": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "svg-react-loader": "^0.4.6"
+  }
+}

@@ -1,0 +1,24 @@
+.searchBar {
+  position: relative;
+  font-family: 'Roboto';
+  width: 200px;
+  height: 40px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.searchInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 30px;
+}
