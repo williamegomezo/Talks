@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .message-container, .echo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .message-body{
+        width: 300px;
+      }
+
+      .send-button {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-container">
+      <input type="text" class="message-body" />
+      <button type="button" class="send-button">Enviar</button>
+    </div>
+    <div class="echo-container"></div>
+  </body>
+  <script>
+    const ws = new WebSocket('ws://' + document.domain + ':' + location.port + '/ws');
+    const messageInput = document.querySelector('.message-body');
+    const sendButton = document.querySelector('.send-button');
+    const echoContainer = document.querySelector('.echo-container');
+
+    sendButton.addEventListener('click', () => {
+      ws.send(messageInput.value);
+    }) 
+
+    ws.onmessage = (event) => {
+      const messageElement = document.createElement('P');
+      console.log(messageElement)
+      messageElement.innerHTML = event.data
+      echoContainer.appendChild(messageElement)
+    }
+  </script>
+</html>

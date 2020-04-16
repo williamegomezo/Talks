@@ -1,0 +1,42 @@
+version: '3.5'
+
+services:
+  db:
+    container_name: chat-postgres
+    image: postgres
+    env_file: .env
+    environment:
+      POSTGRES_USER: $SQLALCHEMY_USERNAME
+      POSTGRES_PASSWORD: $SQLALCHEMY_PASSWORD
+      POSTGRES_DB: $SQLALCHEMY_DBNAME
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+       - ./db-scripts:/db-scripts
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: chat-dbadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: $PGADMIN_DEFAULT_EMAIL
+      PGADMIN_DEFAULT_PASSWORD: $PGADMIN_DEFAULT_PASSWORD
+    volumes:
+       - pgadmin:/root/.pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:

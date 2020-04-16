@@ -1,0 +1,4 @@
+Flask==1.1.2
+Quart==0.11.5
+asyncio==3.4.3
+SQLAlchemy==1.3.16
