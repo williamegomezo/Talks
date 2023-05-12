@@ -1,0 +1,20 @@
+main:
+    params: [input]
+    steps:
+    - hello:
+        call: sys.log
+        args:
+          text: $${input.message}
+          severity: INFO
+    - call_bigquery:
+        call: googleapis.bigquery.v2.jobs.query
+        args:
+          projectId: ${project_id}
+          body: 
+            query: "SELECT CURRENT_DATE()"
+        return: response
+    - log_bigquery:
+        call: sys.log
+        args:
+          text: $${response}
+          severity: INFO
