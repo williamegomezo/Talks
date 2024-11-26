@@ -1,0 +1,4 @@
+Django==3.2.12
+wagtail==2.15.5
+django-storages[google]
+django-cors-headers==3.13.0

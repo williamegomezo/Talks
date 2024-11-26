@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "default": "personalpage-270523"
+  },
+  "targets": {
+    "personalpage-270523": {
+      "hosting": {
+        "develop": ["williamegomezodev"],
+        "production": ["williamegomezo"]
+      }
+    }
+  }
+}
