@@ -1,0 +1,12 @@
+{
+  "hosting": [
+    {
+      "public": "dist",
+      "target": "develop"
+    },
+    {
+      "public": "dist",
+      "target": "production"
+    }
+  ]
+}
