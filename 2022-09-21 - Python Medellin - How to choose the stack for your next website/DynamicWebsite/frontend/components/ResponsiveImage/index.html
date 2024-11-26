@@ -1,0 +1,7 @@
+<picture v-if="srcSet">
+  <source v-for="size in sizes"
+          :key="size"
+          :media="`(max-width: ${srcSet[size].width}px)`"
+          :srcset="srcSet[size].url" />
+  <img :src="srcSet?.lg?.url" :alt="alt" loading="lazy" />
+</picture>
